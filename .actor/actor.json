@@ -1,0 +1,12 @@
+{
+	"actorSpecification": 1,
+	"name": "crawler-eva",
+	"title": "Project Puppeteer Crawler Typescript",
+	"description": "Crawlee and Puppeteer project in typescript.",
+	"version": "0.0",
+	"meta": {
+		"templateId": "ts-crawlee-puppeteer-chrome"
+	},
+	"input": "./input_schema.json",
+	"dockerfile": "./Dockerfile"
+}
