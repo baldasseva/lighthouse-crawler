@@ -15,7 +15,13 @@ router.addHandler('detail', async ({ request, page, log }) => {
     const title = await page.title();
     log.info(`BEGIN/ ${title}`, { url: request.loadedUrl });
 
-    const result = await lighthouse(request.url, undefined, undefined, page)
+    const config = {
+        extends: 'lighthouse:default',
+        settings: {
+            onlyCategories: ['performance', 'seo', 'accessibility'],
+        },
+    };
+    const result = await lighthouse(request.url, undefined, config, page);
     const lhr = result?.lhr;
 
     log.info(`ENDED/ ${title}`, { url: request.loadedUrl });
